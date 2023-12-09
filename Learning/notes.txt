@@ -1,0 +1,12 @@
+Terminal Commands:
+
+    > npm init
+    > npm run script_name          <in package.json>
+    > 
+
+--------------------------------------------------------------
+> Frontend, dom parts were removed from V8 engine.
+> npm - node package manager
+> package.json is configuration file, in which we can run scripts,install
+dependencies.
+> 
