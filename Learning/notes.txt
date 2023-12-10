@@ -9,4 +9,6 @@ Terminal Commands:
 > npm - node package manager
 > package.json is configuration file, in which we can run scripts,install
 dependencies.
-> 
+> sync vs async:
+    > sync blocks the code, return some value.
+    > async dont block it, expects a callback in parameter.
