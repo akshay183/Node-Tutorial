@@ -3,7 +3,7 @@ Terminal Commands:
     > npm init
     > npm run script_name          <in package.json>
     > npm i url
-    > 
+    > npm uninstall module
 
 --------------------------------------------------------------
 https://www.w3schools.com/nodejs/nodejs_intro.asp
