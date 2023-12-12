@@ -2,6 +2,7 @@ Terminal Commands:
 
     > npm init
     > npm run script_name          <in package.json>
+    > npm i url
     > 
 
 --------------------------------------------------------------
