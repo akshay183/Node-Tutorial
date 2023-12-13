@@ -21,6 +21,10 @@ app.use((req, res, next) => {
 
 
 app.get('/', (req, res) => {
+    // headers give metadata about request and response.
+    
+    // for custom headers start with X-customHeader, its a good practice.
+    res.setHeader('X-myName', 'Akshay')
     res.send('Hello World!')
 })
 
