@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index02.js"
+    "start": "node _middleWare.js"
   },
   "author": "",
   "license": "ISC",
