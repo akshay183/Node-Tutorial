@@ -4,6 +4,7 @@ Terminal Commands:
     > npm run script_name          <in package.json>
     > npm i url
     > npm uninstall module
+    > npm i nodemon
 
 --------------------------------------------------------------
 https://www.w3schools.com/nodejs/nodejs_intro.asp
@@ -23,4 +24,5 @@ dependencies.
                          ^            = means except first bit you can update rest.
 > MiddleWare docs link : https://expressjs.com/en/guide/using-middleware.html
 > Headers Link: https://flaviocopes.com/http-request-headers/#content-type
+> Status Codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 > 

@@ -47,7 +47,7 @@ app.post('/api/users', (req, res) => {
     users.push(body)
 
     fs.writeFile('./MOCK_DATA.json', JSON.stringify(users), (err, data) => {
-        res.json({
+        res.status(201).json({
             id: users.length
         })
     })
