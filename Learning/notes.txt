@@ -16,3 +16,9 @@ dependencies.
 > sync vs async:
     > sync blocks the code, return some value.
     > async dont block it, expects a callback in parameter.
+> dependencies/versioning rules: https://docs.npmjs.com/cli/v10/configuring-npm/package-json
+    ex: ^4.18.2 -> means 4(first bit) = major update/breaking change
+                         18(2nd bit)  = recommended update(sort of bug fix)
+                         2(3rd bit)   = minor fix
+                         ^            = means except first bit you can update rest.
+>
