@@ -28,3 +28,5 @@ dependencies.
 > Headers Link: https://flaviocopes.com/http-request-headers/#content-type
 > Status Codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 > MongoDB Docs: https://www.mongodb.com/docs/manual/introduction/
+> MVC pattern: almost same as spring boot, or any other pattern. We have modle , views, controller in different folders. Basically we segregate them so that it becomes maintanable and clean.
+> 
