@@ -5,6 +5,8 @@ Terminal Commands:
     > npm i url
     > npm uninstall module
     > npm i nodemon
+    > npm i mongoose
+    > 
 
 --------------------------------------------------------------
 https://www.w3schools.com/nodejs/nodejs_intro.asp
@@ -25,4 +27,4 @@ dependencies.
 > MiddleWare docs link : https://expressjs.com/en/guide/using-middleware.html
 > Headers Link: https://flaviocopes.com/http-request-headers/#content-type
 > Status Codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
-> 
+> MongoDB Docs: https://www.mongodb.com/docs/manual/introduction/
