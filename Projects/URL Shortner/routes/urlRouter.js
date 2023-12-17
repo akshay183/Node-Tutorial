@@ -8,9 +8,8 @@ const {
 
 const router = express.Router()
 
-router
-    .post('/', createShortenId)
-    .get('/:id', redirectToUrl)
-    .get('/analytics/clicks/:id', getClicksToUrl)
+router.post('/', createShortenId)
+router.get('/:id', redirectToUrl)
+router.get('/analytics/clicks/:id', getClicksToUrl)
 
 module.exports = router

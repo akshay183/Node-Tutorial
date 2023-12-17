@@ -15,12 +15,13 @@ async function createShortenId(req, res) {
         visitedAt: []
     })
 
-    return res.status(201).json(shortenID)
+    return res.status(201).json({ shortenID })
 }
 
 async function redirectToUrl(req, res) {
 
     const shortenID = req.params.id
+    // console.log(shortenID);
 
     const urlBody = await URL.findOneAndUpdate({
         shortenID
@@ -33,6 +34,7 @@ async function redirectToUrl(req, res) {
             }
         })
     // console.log(urlBody);
+    
     if (urlBody) {
         // Redirect to the URL if the document exists
         return res.redirect(urlBody.url);
@@ -45,11 +47,17 @@ async function redirectToUrl(req, res) {
 async function getClicksToUrl(req, res) {
 
     const shortenID = req.params.id
-    const numOfClicks = await URL.findOne({
+    const urlBody = await URL.findOne({
         shortenID,
-    }).visitedAt.length
+    })
 
-    return res.json(numOfClicks)
+    if (urlBody) {
+        const clicks = urlBody.visitedAt.length
+        return res.json({ clicks: clicks })
+    }
+    else {
+        return res.status(404).send("URL not found")
+    }
 }
 
 module.exports = {
