@@ -1,0 +1,5 @@
+// 
+
+return shorten id=post(api,url -> body)
+redirection = get(api/:shortenid,)
+get number of clicks = get(api/analytics/clicks/shortenid)
