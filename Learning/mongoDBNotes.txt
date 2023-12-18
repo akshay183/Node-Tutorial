@@ -3,8 +3,9 @@ Terminal Commands:
 > show dbs
 > use db_name
 > show collections
-> db.collections_name.find()
+> db.collections_name.find({})
 > db.collections_name.insert()
+> db.collections_name.deleteMany({})
 
 
 

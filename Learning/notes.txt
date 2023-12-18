@@ -6,7 +6,7 @@ Terminal Commands:
     > npm uninstall module
     > npm i nodemon
     > npm i mongoose
-    > 
+    > npm i ejs
 
 --------------------------------------------------------------
 https://www.w3schools.com/nodejs/nodejs_intro.asp
