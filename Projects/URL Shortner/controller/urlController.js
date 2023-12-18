@@ -15,7 +15,7 @@ async function createShortenId(req, res) {
         visitedAt: []
     })
 
-    return res.status(201).json({ shortenID })
+    return res.render('home', { id: shortenID, })
 }
 
 async function redirectToUrl(req, res) {
