@@ -3,9 +3,23 @@ Terminal Commands:
 > show dbs
 > use db_name
 > show collections
-> db.collections_name.find({})
-> db.collections_name.insert()
+> db.collections_name.find({}, {requiredProperty1:1, requiredProperty2: 1})
+> db.collections_name.insertOne({})
+> db.collections_name.insertMany([{},{}])
 > db.collections_name.deleteMany({})
+> db.collections_name.find({}).limit(3) -> method chaining
+> db.collections_name.find().sort({ propertyName: 1 }).limit(2) -> -1 to property if sort in descending order.
+> db.collections_name.find({ reviews: {$gt: 7} }) // need to append '$' before opertor.
+> db.collections_name.find({ reviews: {$gt: 7}, body: "lorem ipsum" }) -> multiple filters with operators
+> db.panDetails.find( {$or: [{name: "akshay sharma"},{ age: 25 }, {PanNumber: "alDLAPD777"}] } )
+> db.collections_name.find({rating: {$in: [7,8,9]}})
+> db.collections_name.find({rating: {$nin: [7,8]}})
+> 
+    gt -> greater than
+    lt -> less than
+    gte -> >=
+    lte -> <=
+    
 
 
 
