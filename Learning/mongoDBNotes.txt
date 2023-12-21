@@ -9,17 +9,49 @@ Terminal Commands:
 > db.collections_name.deleteMany({})
 > db.collections_name.find({}).limit(3) -> method chaining
 > db.collections_name.find().sort({ propertyName: 1 }).limit(2) -> -1 to property if sort in descending order.
+
+Operators
 > db.collections_name.find({ reviews: {$gt: 7} }) // need to append '$' before opertor.
 > db.collections_name.find({ reviews: {$gt: 7}, body: "lorem ipsum" }) -> multiple filters with operators
 > db.panDetails.find( {$or: [{name: "akshay sharma"},{ age: 25 }, {PanNumber: "alDLAPD777"}] } )
 > db.collections_name.find({rating: {$in: [7,8,9]}})
 > db.collections_name.find({rating: {$nin: [7,8]}})
+> db.panDetails.updateOne({_id: ObjectId('6583a621199d9944af581c84')}, {$inc: {age: 2}})
+> db.panDetails.updateMany({_id: ObjectId('6583a621199d9944af581c84')}, {$inc: {age: -2}}) -> to decrement by given value
+> db.panDetails.updateMany({age: {$gt: 20}}, {$inc: {age: 2}})
+> db.panDetails.updateOne({_id: ObjectId('6583a621199d9944af581c84')}, {$push: {placesPlayed: "Bermuda"}})
+> db.panDetails.updateOne({_id: ObjectId('6583a621199d9944af581c84')}, {$pull: {placesPlayed: "Australlia"}})
+> db.panDetails.updateOne({_id: ObjectId('randomIDXXDDDjej8')}, {$pull: {placesPlayed: {$each: ["Australlia", "England"]}}})
+
+
+Arrays querying
+> db.panDetails.find({placesPlayed: "sri lanka"}) -> for finding whether documents has these elements in array or not, if found will return those documents.
+> db.panDetails.find({placesPlayed: {$in: ["bangladesh", "sri lanka"]}}) -> to use $in operator in MongoDB arrays...
+> db.panDetails.find({placesPlayed: ["bangladesh", "sri lanka"]}) -> retrieves exact match of array, order of elements in query should match with that of array.
+> db.panDetails.find({placesPlayed: {$all: ["pakistan", "india"]}})
+
+for nested documents:
+> db.panDetails.find({"placesPlayed.pitch": "hard"}) -> remember here property i.e one in dot notation has to be in quotation "".
+
+for deleting documents:
+> db.panDetails.deleteOne({_id: ObjectId('6583a621199d9944af581c84')})
+> db.panDetalis.deleteMany({property1: "value1"})
+
+Updating Documents:
+> db.panDetails.updateOne({_id: ObjectId('6583a621199d9944af581c84')}, {$set: {property1: valueToBeUpdated, prop2: valueToBeUpdated}})
+> db.panDetails.updateMany({_id : ObjectId('6583a621199d9944af581c84')}, {$set: {property1: valueToBeUpdated, prop2: valueToBeUpdated}})
 > 
+
     gt -> greater than
     lt -> less than
     gte -> >=
     lte -> <=
-    
+    in -> same meaning as in sql
+    all -> have atleast all the attributes specified, could have extra than that, but atleast all that is being specified.
+    inc -> increases the value of certain values by a given amount.
+    $push -> will push object into array
+    $pull -> will pull object out of array
+    $each -> will be able to push or pull multiple objects in one go.
 
 
 
