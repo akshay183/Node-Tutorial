@@ -57,7 +57,7 @@ Updating Documents:
 
 ------------------------------------------------------------
 
+
 > Model is like class therefore firstletter capital.
 > Almost all driver methods of mongoose are returning promises.
   Be cautious on above point as it may happen if not used await then next code gets executed before fetching the data from db.
-> 
