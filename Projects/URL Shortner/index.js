@@ -2,8 +2,11 @@ const express = require('express')
 const path = require('path');
 const app = express()
 const PORT = 8000
+
 const staticRouter = require('./routes/staticRouter')
-const router = require('./routes/urlRouter')
+const urlRouter = require('./routes/urlRouter')
+const userRouter = require('./routes/userRouter.js')
+
 const {mongoDBConnect} = require('./connection.js')
 
 app.use(express.json())
@@ -19,7 +22,8 @@ mongoDBConnect("mongodb://127.0.0.1:27017/tutorial-db").
     })
 
 // route
-app.use('/api', router)
+app.use('/api', urlRouter)
+app.use('/user', userRouter)
 app.use('/', staticRouter)
 
 app.listen(PORT, () => console.log(`app listening on port ${PORT}!`))
