@@ -12,7 +12,8 @@ async function createShortenId(req, res) {
     const result = await URL.create({
         shortenID,
         url,
-        visitedAt: []
+        visitedAt: [],
+        createdBy: req.user._id,
     })
 
     return res.render('home', { id: shortenID, })

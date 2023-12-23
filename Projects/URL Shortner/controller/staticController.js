@@ -3,7 +3,12 @@ const User = require('../models/urlModel')
 
 async function handleHomePage(req, res) {
 
-    const urls = await User.find({})
+    const user = req.user
+    if(!user) {
+        return res.redirect('/login')
+    }
+
+    const urls = await User.find({createdBy: user._id})
     return res.render('home', {urls: urls}) // or {urls}
 }
 

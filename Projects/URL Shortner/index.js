@@ -3,7 +3,7 @@ const path = require('path');
 const app = express()
 const PORT = 8000
 const cookieParser = require('cookie-parser')
-const { restrictCallToUrl } = require('./middleware/authMiddleware.js')
+const { restrictCallToUrl, checkAuthForHomePage } = require('./middleware/authMiddleware.js')
 
 const staticRouter = require('./routes/staticRouter')
 const urlRouter = require('./routes/urlRouter')
@@ -27,6 +27,6 @@ mongoDBConnect("mongodb://127.0.0.1:27017/tutorial-db").
 // route
 app.use('/api', restrictCallToUrl, urlRouter) // inline middleware. 
 app.use('/user', userRouter)
-app.use('/', staticRouter)
+app.use('/', checkAuthForHomePage, staticRouter)
 
 app.listen(PORT, () => console.log(`app listening on port ${PORT}!`))

@@ -17,6 +17,16 @@ function restrictCallToUrl(req, res, next) {
     next();
 }
 
+function checkAuthForHomePage(req, res, next) {
+
+    const uid = req.cookies?.uid
+    const user = getUser(uid)
+
+    req.user = user
+    next();
+}
+
 module.exports = {
     restrictCallToUrl,
+    checkAuthForHomePage,
 }
