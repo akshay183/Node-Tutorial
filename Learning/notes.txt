@@ -7,6 +7,8 @@ Terminal Commands:
     > npm i nodemon
     > npm i mongoose
     > npm i ejs
+    > npm i cookie-parser
+    > 
 
 --------------------------------------------------------------
 https://www.w3schools.com/nodejs/nodejs_intro.asp
@@ -29,4 +31,4 @@ dependencies.
 > Status Codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 > MongoDB Docs: https://www.mongodb.com/docs/manual/introduction/
 > MVC pattern: almost same as spring boot, or any other pattern. We have modle , views, controller in different folders. Basically we segregate them so that it becomes maintanable and clean.
-> 
+> we need to `const cookieParser = require('cookie-parser')` to use cookie parser.
