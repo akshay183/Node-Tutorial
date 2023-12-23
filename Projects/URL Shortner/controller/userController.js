@@ -18,6 +18,27 @@ async function handleSignUp (req, res) {
     return res.render('home')
 }
 
+async function handleLogin (req, res) {
+    
+    const {
+        email,
+        password
+    } = req.body
+
+    const user = await User.findOne({
+        email,
+        password,
+    })
+
+    if(!user) {
+        return res.render("login", {
+            error: "Invalid UserName or Password"
+        })
+    }
+    return res.redirect('/')
+}
+
 module.exports = {
-    handleSignUp
+    handleSignUp,
+    handleLogin,
 }

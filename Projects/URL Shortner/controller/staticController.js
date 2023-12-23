@@ -12,7 +12,13 @@ async function handleSignUpPage(req, res) {
     res.render('sign_up')
 }
 
+async function handleLoginPage(req, res) {
+
+    res.render('login')
+}
+
 module.exports = {
     handleHomePage,
-    handleSignUpPage
+    handleSignUpPage,
+    handleLoginPage,
 }
