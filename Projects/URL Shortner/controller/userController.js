@@ -38,10 +38,9 @@ async function handleLogin (req, res) {
         })
     }
 
-    const uid = uuidv4();
-    setUserId(uid, user);
+    const token = setUserId(user);
 
-    res.cookie('uid', uid)
+    res.cookie('uid', token)
     return res.redirect('/');
 }
 

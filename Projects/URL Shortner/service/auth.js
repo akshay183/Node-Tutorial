@@ -1,13 +1,22 @@
-const userUidMap = new Map()
+const jwt = require('jsonwebtoken')
+const secretOrPrivateKey = 'worldSecretkey!@#123498(&%'
 
-function setUserId (uid, user) {
+function setUserId (user) {
 
-    userUidMap.set(uid, user)
+    return jwt.sign({
+        _id: user._id,
+        email: user.email
+    },
+    secretOrPrivateKey)
 }
 
-function getUser (uid) {
-
-    return userUidMap.get(uid)
+function getUser (token) {
+    
+    try {
+        return jwt.verify(token, secretOrPrivateKey)
+    } catch (error) {
+        return null;
+    }
 }
 
 module.exports = {
